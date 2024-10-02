@@ -1,17 +1,25 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 
-<title>Frontpage</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="../public/css/styles.css" th:href="@{/css/styles.css}" rel="stylesheet"/>
+<head>
+    <title>Frontpage</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../public/css/styles.css" th:href="@{/css/styles.css}" rel="stylesheet"/>
 </head>
 
 <body>
 
-<h1>Welcome to the Javalin / Thymeleaf demo</h1>
+<h1>Velkommen til four things plus website</h1>
 
-<p>This is your first web application in this world</p>
+<p>Vær venlig at logge på herunder:</p>
+<form method="post">
+    <input type="text" name="username" placeholder="username"/><br/><br/>
+    <input type="password" name="password" placeholder="password"/><br/><br/>
+    <button type="submit" formaction="/login">Log på</button>
+</form>
+
+<p class="message" th:text="${#ctx.message}"></p>
 
 </body>
 </html>
